@@ -1,0 +1,678 @@
+<div class="portfolio-wrapper text-slate-800 antialiased min-h-screen relative overflow-x-hidden">
+
+  <!-- BACKGROUND GLOW EFFECTS -->
+  <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+    <div class="absolute -top-40 -left-40 w-[600px] h-[600px] bg-blue-500/15 blur-[160px] rounded-full"></div>
+    <div class="absolute top-1/3 -right-40 w-[550px] h-[550px] bg-cyan-400/15 blur-[160px] rounded-full"></div>
+    <div class="absolute -bottom-40 left-1/4 w-[650px] h-[650px] bg-amber-500/10 blur-[180px] rounded-full"></div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/80 shadow-sm">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+
+      <!-- LOGO -->
+      <a href="#home" class="group flex flex-col">
+        <h1
+          class="text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-blue-600 via-cyan-600 to-amber-600 bg-clip-text text-transparent group-hover:opacity-90 transition">
+          Bharath M
+        </h1>
+        <p class="text-[11px] font-semibold text-slate-500 tracking-widest uppercase">
+          FULL STACK DEVELOPER
+        </p>
+      </a>
+
+      <!-- DESKTOP MENU -->
+      <ul class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
+        <li>
+          <a href="#home" class="nav-link" [class.active-nav]="activeSection === 'home'">Home</a>
+        </li>
+        <li>
+          <a href="#about" class="nav-link" [class.active-nav]="activeSection === 'about'">About</a>
+        </li>
+        <li>
+          <a href="#skills" class="nav-link" [class.active-nav]="activeSection === 'skills'">Skills</a>
+        </li>
+        <li>
+          <a href="#projects" class="nav-link" [class.active-nav]="activeSection === 'projects'">Projects</a>
+        </li>
+        <li>
+          <a href="#achievements" class="nav-link"
+            [class.active-nav]="activeSection === 'achievements'">Achievements</a>
+        </li>
+        <li>
+          <a href="#contact" class="nav-link" [class.active-nav]="activeSection === 'contact'">Contact</a>
+        </li>
+      </ul>
+
+      <!-- MOBILE BUTTON -->
+      <button
+        class="nav-bar-app md:hidden relative w-10 h-10 flex flex-col justify-center items-center gap-1.5 z-50 text-slate-800 focus:outline-none"
+        (click)="toggleMenu()" aria-label="Toggle Menu">
+        <span class="w-6 h-[2.5px] bg-slate-800 rounded-full transition-all duration-300" [class.rotate-45]="mobileMenu"
+          [class.translate-y-[8px]]="mobileMenu">
+        </span>
+        <span class="w-6 h-[2.5px] bg-slate-800 rounded-full transition-all duration-300"
+          [class.opacity-0]="mobileMenu">
+        </span>
+        <span class="w-6 h-[2.5px] bg-slate-800 rounded-full transition-all duration-300"
+          [class.-rotate-45]="mobileMenu" [class.-translate-y-[8px]]="mobileMenu">
+        </span>
+      </button>
+
+    </div>
+
+    <!-- MOBILE MENU DRAWER -->
+    @if (mobileMenu) {
+    <div class="md:hidden fixed top-[73px] left-0 w-full z-40 px-4 py-3">
+      <div class="rounded-3xl bg-white/95 backdrop-blur-2xl border border-slate-200 shadow-2xl overflow-hidden p-6">
+        <ul class="flex flex-col gap-5 text-base font-semibold text-slate-700">
+          <li>
+            <a href="#home" class="mobile-nav-link block py-1" [class.active-mobile-nav]="activeSection === 'home'"
+              (click)="toggleMenu()">Home</a>
+          </li>
+          <li>
+            <a href="#about" class="mobile-nav-link block py-1" [class.active-mobile-nav]="activeSection === 'about'"
+              (click)="toggleMenu()">About</a>
+          </li>
+          <li>
+            <a href="#skills" class="mobile-nav-link block py-1" [class.active-mobile-nav]="activeSection === 'skills'"
+              (click)="toggleMenu()">Skills</a>
+          </li>
+          <li>
+            <a href="#projects" class="mobile-nav-link block py-1"
+              [class.active-mobile-nav]="activeSection === 'projects'" (click)="toggleMenu()">Projects</a>
+          </li>
+          <li>
+            <a href="#achievements" class="mobile-nav-link block py-1"
+              [class.active-mobile-nav]="activeSection === 'achievements'" (click)="toggleMenu()">Achievements</a>
+          </li>
+          <li>
+            <a href="#contact" class="mobile-nav-link block py-1"
+              [class.active-mobile-nav]="activeSection === 'contact'" (click)="toggleMenu()">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    }
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section id="home" class="min-h-screen flex items-center px-6 pt-32 pb-20 relative">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+      <!-- LEFT CONTENT -->
+      <div class="z-10" data-aos="fade-up">
+
+        <div
+          class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/60 mb-6">
+          <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
+          <span class="text-blue-700 font-semibold text-xs tracking-wider uppercase">Welcome To My Portfolio</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-slate-900 leading-tight mb-4 tracking-tight">
+          Hi, I'm
+          <span class="bg-gradient-to-r from-blue-600 via-cyan-600 to-amber-600 bg-clip-text text-transparent">
+            Bharath M
+          </span>
+        </h1>
+
+        <p class="text-blue-600 text-lg md:text-xl font-semibold mb-4">
+          Building Scalable Digital Solutions
+        </p>
+
+        <!-- TYPING -->
+        <h2 class="text-xl md:text-3xl font-semibold text-slate-700 mb-6 h-[40px] flex items-center">
+          <span #typingElement></span>
+        </h2>
+
+        <!-- DESCRIPTION -->
+        <p class="text-slate-600 text-base md:text-lg leading-relaxed max-w-xl mb-8">
+          Full Stack Developer with 2+ years of experience building scalable web applications, REST APIs, enterprise
+          software solutions, Angular applications, Node.js services, and PostgreSQL database systems.
+        </p>
+
+        <!-- BUTTONS -->
+        <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 w-full sm:w-auto">
+          <a href="#contact"
+            class="w-full sm:w-auto text-center px-8 py-3.5 rounded-xl bg-blue-600 text-white font-semibold shadow-lg shadow-blue-500/25 hover:bg-blue-700 hover:shadow-xl hover:shadow-blue-500/35 hover:-translate-y-0.5 transition duration-300 flex items-center justify-center gap-2.5">
+            Let's Talk
+            <i class="fas fa-comments text-sm"></i>
+          </a>
+
+          <a href="assets/Bharath_Resume.pdf" download
+            class="w-full sm:w-auto text-center px-8 py-3.5 rounded-xl bg-white text-slate-700 border border-slate-300 font-semibold hover:bg-slate-50 hover:border-slate-400 hover:-translate-y-0.5 transition duration-300 flex items-center justify-center gap-2.5 shadow-sm">
+            Download Resume
+            <i class="fas fa-download text-sm"></i>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- RIGHT IMAGE -->
+      <div class="flex justify-center items-center" data-aos="fade-left">
+        <div class="relative profile-card">
+
+          <!-- Animated Ambient Border -->
+          <div class="profile-border"></div>
+
+          <!-- Card Container -->
+          <div
+            class="relative w-[280px] h-[360px] sm:w-[320px] sm:h-[420px] md:w-[360px] md:h-[480px] rounded-[32px] overflow-hidden bg-slate-900 border border-slate-200/30 shadow-2xl">
+            <img src="assets/profile.jpeg" alt="Bharath" class="w-full h-full object-cover object-top" />
+
+            <!-- Dark Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent"></div>
+
+            <!-- Bottom Floating Profile Card -->
+            <div class="absolute bottom-4 left-4 right-4">
+              <div class="backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl p-4 text-white shadow-lg">
+                <div class="flex justify-between items-center">
+                  <div>
+                    <h3 class="text-base font-bold text-white tracking-wide">Bharath M</h3>
+                    <p class="text-cyan-300 text-xs font-medium">Full Stack Developer</p>
+                  </div>
+                  <div class="w-px h-8 bg-white/20"></div>
+                  <div class="text-center">
+                    <h3 class="text-amber-400 text-xl font-extrabold">2+</h3>
+                    <p class="text-[10px] text-slate-300 uppercase tracking-wider">Years Exp.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tech Floating Badges -->
+          <div class="absolute -top-4 -left-4 tech-icon angular-icon shadow-lg">
+            <i class="fab fa-angular"></i>
+          </div>
+          <div class="absolute top-1/4 -right-5 tech-icon node-icon shadow-lg">
+            <i class="fab fa-node-js"></i>
+          </div>
+          <div class="absolute bottom-8 -left-5 tech-icon postgres-icon shadow-lg">
+            <i class="fas fa-database"></i>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="py-2 px-6">
+    <div class="max-w-6xl mx-auto">
+
+      <div class="text-center mb-14" data-aos="fade-up">
+        <p class="text-blue-600 font-semibold uppercase tracking-widest text-xs mb-2">About Me</p>
+        <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900">Get To Know Me</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <div class="about-card" data-aos="fade-up" data-aos-delay="100">
+          <h3 class="about-title">👨‍💻 Who Am I?</h3>
+          <p>
+            I'm Bharath M, a Full Stack Developer from Madurai with 2+ years of experience building scalable web
+            applications and enterprise solutions.
+          </p>
+        </div>
+
+        <div class="about-card" data-aos="fade-up" data-aos-delay="200">
+          <h3 class="about-title">🚀 What I Do?</h3>
+          <p>
+            I specialize in Angular, Node.js, TypeScript, and PostgreSQL, developing responsive user interfaces, REST
+            APIs, and modern web applications.
+          </p>
+        </div>
+
+        <div class="about-card" data-aos="fade-up" data-aos-delay="300">
+          <h3 class="about-title">♟️ Beyond Coding</h3>
+          <p>
+            I'm a Divisional Chess Player who enjoys strategic thinking, problem solving, and continuous learning.
+          </p>
+        </div>
+
+        <div class="about-card" data-aos="fade-up" data-aos-delay="400">
+          <h3 class="about-title">🏏 Hobbies</h3>
+          <p>
+            Apart from development, I enjoy playing Chess, Cricket, and Carrom during my free time.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <section id="skills" class="py-10 px-6">
+    <div class="max-w-6xl mx-auto">
+
+      <div class="text-center mb-14" data-aos="fade-up">
+        <p class="text-blue-600 font-semibold uppercase tracking-widest text-xs mb-2">Skills</p>
+        <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900">Technologies I Work With</h2>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-item" data-aos="zoom-in" data-aos-delay="50">
+          <i class="fab fa-angular angular"></i>
+          <span>Angular</span>
+        </div>
+        <div class="skill-item" data-aos="zoom-in" data-aos-delay="100">
+          <i class="fab fa-node-js node"></i>
+          <span>Node.js</span>
+        </div>
+        <div class="skill-item" data-aos="zoom-in" data-aos-delay="150">
+          <i class="fas fa-code typescript"></i>
+          <span>TypeScript</span>
+        </div>
+        <div class="skill-item" data-aos="zoom-in" data-aos-delay="200">
+          <i class="fas fa-database postgres"></i>
+          <span>PostgreSQL</span>
+        </div>
+        <div class="skill-item" data-aos="zoom-in" data-aos-delay="250">
+          <i class="fas fa-wind tailwind"></i>
+          <span>Tailwind CSS</span>
+        </div>
+        <div class="skill-item" data-aos="zoom-in" data-aos-delay="300">
+          <i class="fas fa-server api"></i>
+          <span>REST API</span>
+        </div>
+        <div class="skill-item" data-aos="zoom-in" data-aos-delay="350">
+          <i class="fas fa-plug text-indigo-500"></i>
+          <span>API Integration</span>
+        </div>
+        <div class="skill-item" data-aos="zoom-in" data-aos-delay="400">
+          <i class="fas fa-network-wired express"></i>
+          <span>Express.js</span>
+        </div>
+        <div class="skill-item" data-aos="zoom-in" data-aos-delay="450">
+          <i class="fas fa-table sql"></i>
+          <span>SQL</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section id="projects" class="py-14 px-6">
+    <div class="max-w-7xl mx-auto">
+
+      <div class="text-center mb-16" data-aos="fade-up">
+        <p class="text-blue-600 font-semibold uppercase tracking-widest text-xs mb-2">Projects</p>
+        <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900">Featured Projects</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+
+        <!-- Existing Dynamic Projects -->
+        @for(project of projects; track project.title){
+        <div class="project-card" data-aos="fade-up">
+          <h3 class="text-2xl font-bold text-slate-900 mb-2">{{project.title}}</h3>
+          <p class="text-blue-600 font-semibold text-sm mb-4">{{project.technologies}}</p>
+          <p class="text-slate-600 leading-relaxed">{{project.description}}</p>
+        </div>
+        }
+
+        <!-- 1. SchoolChimes - WhatsApp Meta API Integration -->
+        <div class="project-card" data-aos="fade-up">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="text-2xl font-bold text-slate-900">SchoolChimes WhatsApp System</h3>
+            <span
+              class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-600 text-xs font-bold border border-emerald-200">
+              Meta / ICS
+            </span>
+          </div>
+          <p class="text-blue-600 font-semibold text-sm mb-4">
+            Angular • Node.js • Meta WhatsApp Cloud API • ICS Integration • PostgreSQL
+          </p>
+          <p class="text-slate-600 leading-relaxed">
+            Integrated automated Meta WhatsApp messaging for SchoolChimes web application, enabling schools to send
+            instant notifications, homework updates, attendance alerts, and leave approvals to parents. Managed vendor
+            communication with ICS, handled payload validations, and built reliable webhook mechanisms.
+          </p>
+        </div>
+
+        <!-- 2. SchoolChimes - Real-Time GPS Tracking Integration -->
+        <div class="project-card" data-aos="fade-up">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="text-2xl font-bold text-slate-900">SchoolChimes Live Bus GPS Tracking</h3>
+            <span class="px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-xs font-bold border border-blue-200">
+              Dhundhoo GPS
+            </span>
+          </div>
+          <p class="text-blue-600 font-semibold text-sm mb-4">
+            Angular • REST APIs • Dhundhoo GPS Gateway • Real-time Tracking • Mobile App Sync
+          </p>
+          <p class="text-slate-600 leading-relaxed">
+            Implemented real-time school bus fleet tracking in collaboration with Dhundhoo GPS platform. Coordinated
+            cross-team communication with the mobile application developers to ensure synchronized vehicle telemetry,
+            route management, accurate geofencing, and live route status updates.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS SECTION -->
+  <section id="achievements" class="py-14 px-6">
+    <div class="max-w-7xl mx-auto">
+
+      <div class="text-center mb-16" data-aos="fade-up">
+        <p class="text-blue-600 font-semibold uppercase tracking-widest text-xs mb-2">Achievements</p>
+        <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900">Achievements & Recognition</h2>
+        <p class="text-slate-600 mt-3 max-w-xl mx-auto text-base">
+          Recognition, certifications and professional milestones.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <!-- 1. Employee of the Month -->
+        <div class="achievement-card" data-aos="fade-up" data-aos-delay="100">
+          <div
+            class="cert-img-container h-48 overflow-hidden rounded-xl mb-4 bg-slate-100 relative group cursor-pointer"
+            (click)="openPreview('assets/emp-of-month.jpg', 'Employee of the Month')">
+            <img src="assets/emp-of-month.jpg" alt="Employee of the Month" class="w-full h-full object-cover">
+            <div class="cert-overlay">
+              <div class="cert-view-badge">
+                <i class="fas fa-search-plus"></i>
+                <span>View Preview</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-slate-900">🏆 Employee of the Month</h3>
+            <p class="text-slate-600 text-sm mt-2 leading-relaxed">
+              Recognized for outstanding performance, consistent delivery, problem-solving abilities, teamwork, and
+              contribution to project success.
+            </p>
+          </div>
+        </div>
+
+        <!-- 2. CEO Appreciation Award -->
+        <div class="achievement-card" data-aos="fade-up" data-aos-delay="200">
+          <div
+            class="cert-img-container h-48 overflow-hidden rounded-xl mb-4 bg-slate-100 relative group cursor-pointer"
+            (click)="openPreview('assets/ceo-appreciation.jpg', 'CEO Appreciation Award')">
+            <img src="assets/ceo-appreciation.jpg" alt="CEO Appreciation Certificate"
+              class="w-full h-full object-cover">
+            <div class="cert-overlay">
+              <div class="cert-view-badge">
+                <i class="fas fa-search-plus"></i>
+                <span>View Preview</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-slate-900">🌟 CEO Appreciation Award</h3>
+            <p class="text-slate-600 text-sm mt-2 leading-relaxed">
+              Received a CEO Appreciation Certificate for independently managing backend development, designing scalable
+              APIs, optimizing PostgreSQL databases, and ensuring reliable system performance for a business-critical
+              application.
+            </p>
+          </div>
+        </div>
+
+        <!-- 3. Advanced Diploma in Python Programming (ADPP) -->
+        <div class="achievement-card" data-aos="fade-up" data-aos-delay="300">
+          <div
+            class="cert-img-container h-48 overflow-hidden rounded-xl mb-4 bg-slate-100 relative group cursor-pointer"
+            (click)="openPreview('assets/cscpython.jpg', 'Advanced Diploma in Python Programming (ADPP)')">
+            <img src="assets/cscpython.jpg" alt="CSC ADPP Certificate - Bharath M" class="w-full h-full object-cover">
+            <div class="cert-overlay">
+              <div class="cert-view-badge">
+                <i class="fas fa-search-plus"></i>
+                <span>View Preview</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-slate-900">📜 Python & C/C++ Certification</h3>
+            <p class="text-slate-600 text-sm mt-2 leading-relaxed">
+              Advanced Diploma in Python Programming (ADPP) certified with 'A' Grade by CSC, covering C Language, OOP
+              with C++, and Python core fundamentals.
+            </p>
+          </div>
+        </div>
+
+        <!-- 1. Java Full Stack Internship Training -->
+        <div class="achievement-card" data-aos="fade-up" data-aos-delay="100">
+          <div
+            class="cert-img-container h-48 overflow-hidden rounded-xl mb-4 bg-slate-100 relative group cursor-pointer"
+            (click)="openPreview('assets/javaintership.jpeg', 'Java Full Stack Internship Training - MAASMIND')">
+            <img src="assets/javaintership.jpeg" alt="Java Full Stack Internship Training"
+              class="w-full h-full object-cover">
+            <div class="cert-overlay">
+              <div class="cert-view-badge">
+                <i class="fas fa-search-plus"></i>
+                <span>View Preview</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-slate-900">💼 Java Full Stack Internship</h3>
+            <p class="text-slate-600 text-sm mt-2 leading-relaxed">
+              Completed a 6-month intensive internship training at MAASMIND covering Core Java, J2EE (Servlet, JSP),
+              Spring Framework, and SQL database systems.
+            </p>
+          </div>
+        </div>
+
+        <!-- 2. Typewriting English Distinction -->
+        <div class="achievement-card" data-aos="fade-up" data-aos-delay="200">
+          <div
+            class="cert-img-container h-48 overflow-hidden rounded-xl mb-4 bg-slate-100 relative group cursor-pointer"
+            (click)="openPreview('assets/typewriting.jpeg', 'Junior Grade Typewriting English - DOTE')">
+            <img src="assets/typewriting.jpeg" alt="Typewriting English Junior Grade"
+              class="w-full h-full object-cover">
+            <div class="cert-overlay">
+              <div class="cert-view-badge">
+                <i class="fas fa-search-plus"></i>
+                <span>View Preview</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-slate-900">⌨️ English Typewriting Distinction</h3>
+            <p class="text-slate-600 text-sm mt-2 leading-relaxed">
+              Awarded First Class with Distinction in Junior Grade Typewriting English (30 WPM) by the Department of
+              Technical Education (DOTE), Tamil Nadu.
+            </p>
+          </div>
+        </div>
+
+        <!-- 4. Chess Champion -->
+        <div class="achievement-card" data-aos="fade-up" data-aos-delay="400">
+          <div
+            class="cert-img-container h-48 overflow-hidden rounded-xl mb-4 bg-slate-100 relative group cursor-pointer"
+            (click)="openPreview('assets/chess-achievement.jpg', 'Zone C Chess Champion')">
+            <img src="assets/chess-achievement.jpg" alt="Chess Achievement" class="w-full h-full object-cover">
+            <div class="cert-overlay">
+              <div class="cert-view-badge">
+                <i class="fas fa-search-plus"></i>
+                <span>View Preview</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-slate-900">♟️ Zone C Chess Champion</h3>
+            <p class="text-slate-600 text-sm mt-2 leading-relaxed">
+              Secured 1st Position in Zone C Chess Tournament, demonstrating strategic thinking, problem-solving
+              abilities, and competitive excellence.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- CERTIFICATE LIGHTBOX PREVIEW MODAL -->
+    @if (previewImage) {
+    <div class="fixed inset-0 z-[100] bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4 sm:p-6"
+      (click)="closePreview()">
+      <div class="relative max-w-4xl w-full bg-white rounded-3xl overflow-hidden shadow-2xl border border-slate-200/40"
+        (click)="$event.stopPropagation()">
+
+        <!-- Header -->
+        <div class="px-6 py-4 border-b border-slate-100 flex items-center justify-between bg-slate-50/50">
+          <h4 class="font-bold text-slate-800 text-lg sm:text-xl">{{ previewTitle }}</h4>
+          <button (click)="closePreview()"
+            class="w-9 h-9 rounded-full bg-slate-200/80 hover:bg-slate-300/80 text-slate-700 flex items-center justify-center transition focus:outline-none"
+            aria-label="Close Preview">
+            <i class="fas fa-times text-base"></i>
+          </button>
+        </div>
+
+        <!-- Full Image Container -->
+        <div class="p-4 sm:p-6 flex items-center justify-center bg-slate-900/5 max-h-[75vh] overflow-auto">
+          <img [src]="previewImage" [alt]="previewTitle"
+            class="max-h-[70vh] w-auto max-w-full rounded-xl shadow-md object-contain">
+        </div>
+
+      </div>
+    </div>
+    }
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="py-14 px-6">
+    <div class="max-w-7xl mx-auto">
+
+      <div class="text-center mb-16" data-aos="fade-up">
+        <p class="text-blue-600 font-semibold uppercase tracking-widest text-xs mb-2">Contact</p>
+        <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900">Let's Make It Happen</h2>
+        <p class="text-slate-600 mt-3 max-w-xl mx-auto text-base">
+          Have a project or opportunity? Let's connect.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-[0.9fr_1.1fr] gap-8 items-start">
+
+        <!-- LEFT SIDE INFO -->
+        <div class="glass-panel p-8">
+          <p class="text-blue-600 uppercase tracking-widest text-xs font-bold mb-2">Get In Touch</p>
+          <h3 class="text-2xl font-bold text-slate-900 mb-3">Let's Connect</h3>
+          <p class="text-slate-600 leading-relaxed mb-6 text-sm md:text-base">
+            Passionate about building scalable applications and delivering quality software solutions.
+          </p>
+
+          <div class="space-y-3 mb-8 text-slate-600 text-sm font-medium">
+            <div class="flex items-center gap-3">
+              <span class="text-base">📍</span>
+              <span>Madurai, Tamil Nadu, India</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-base">⚡</span>
+              <span>Usually responds within 24 hours</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3 mb-6">
+            <a href="mailto:bharathmayan.tech@gmail.com?subject=Portfolio%20Inquiry&body=Hi%20Bharath,%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20communicate%20with%20you."
+              class="contact-mini-card">
+              📧 Email
+            </a>
+            <a href="https://wa.me/919345443519?text=Hi%20Bharath,%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20communicate%20with%20you."
+              target="_blank" class="contact-mini-card">
+              💬 WhatsApp
+            </a>
+          </div>
+
+          <div class="pt-6 border-t border-slate-200/80 text-center">
+            <p class="text-slate-500 text-xs">Thank you for visiting my portfolio.</p>
+            <p class="text-blue-600 font-semibold text-xs mt-1">🚀 Let's build something great together.</p>
+          </div>
+        </div>
+
+        <!-- RIGHT SIDE FORM -->
+        <div class="glass-panel p-8">
+          <div
+            class="rounded-2xl p-4 mb-6 bg-gradient-to-r from-blue-500/10 via-cyan-500/10 to-amber-500/10 border border-blue-500/20">
+            <h3 class="text-base font-bold text-slate-900">Have a Project in Mind?</h3>
+            <p class="text-slate-600 text-xs mt-1">Let's build something amazing together.</p>
+          </div>
+
+          <form #contactForm="ngForm" (ngSubmit)="sendWhatsapp(contactForm)" class="space-y-4">
+            <div>
+              <input type="text" name="name" ngModel placeholder="Your Name" class="contact-input" required>
+            </div>
+            <div>
+              <input type="email" name="email" ngModel placeholder="Your Email" class="contact-input" required>
+            </div>
+            <div>
+              <textarea rows="4" name="message" ngModel placeholder="Your Message" class="contact-input resize-none"
+                required></textarea>
+            </div>
+            <button type="submit"
+              class="w-full py-3.5 rounded-xl bg-blue-600 text-white font-semibold shadow-lg shadow-blue-500/25 hover:bg-blue-700 hover:shadow-xl hover:shadow-blue-500/35 transition active:scale-[0.99]">
+              Send Message
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-8 text-center border-t border-slate-200/80 bg-white/40">
+    <p class="text-xs text-slate-500 font-medium">
+      © 2026 Bharath M. All Rights Reserved.
+    </p>
+  </footer>
+
+  <p class="hidden">
+    Full Stack Developer, Angular Developer, Node.js Developer,
+    PostgreSQL Developer, TypeScript Developer, REST API Developer,
+    Software Engineer from Madurai, Tamil Nadu, India.
+  </p>
+
+  <!-- DESKTOP SOCIAL SIDEBAR -->
+  <div class="hidden lg:flex fixed left-6 top-1/2 -translate-y-1/2 z-40 flex-col gap-3">
+    <a href="https://github.com/bharathmayan" target="_blank" class="social-btn group" aria-label="GitHub">
+      <i class="fab fa-github text-slate-700 group-hover:text-slate-900 transition"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/bharath-mayan-b8422821a?utm_source=share_via&utm_content=profile"
+      target="_blank" class="social-btn group" aria-label="LinkedIn">
+      <i class="fab fa-linkedin-in text-[#0A66C2] group-hover:scale-110 transition"></i>
+    </a>
+    <a href="https://www.instagram.com/bharath_official05" target="_blank" class="social-btn group"
+      aria-label="Instagram">
+      <i class="fab fa-instagram text-[#E4405F] group-hover:scale-110 transition"></i>
+    </a>
+  </div>
+
+  <!-- MOBILE SOCIAL FLOATING BAR -->
+  <div
+    class="lg:hidden fixed bottom-4 left-1/2 -translate-x-1/2 z-40 flex gap-3 px-4 py-2 rounded-full bg-white/90 backdrop-blur-xl border border-slate-200/90 shadow-lg">
+    <a href="https://github.com/bharathmayan" target="_blank"
+      class="w-10 h-10 rounded-full flex items-center justify-center text-slate-800 hover:bg-slate-100 transition"
+      aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/bharath-mayan-b8422821a?utm_source=share_via&utm_content=profile"
+      target="_blank"
+      class="w-10 h-10 rounded-full flex items-center justify-center text-[#0A66C2] hover:bg-slate-100 transition"
+      aria-label="LinkedIn">
+      <i class="fab fa-linkedin-in"></i>
+    </a>
+    <a href="https://www.instagram.com/bharath_official05" target="_blank"
+      class="w-10 h-10 rounded-full flex items-center justify-center text-[#E4405F] hover:bg-slate-100 transition"
+      aria-label="Instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+  </div>
+
+  <!-- CURSOR GLOW -->
+  <div
+    class="fixed w-96 h-96 rounded-full pointer-events-none blur-[120px] opacity-25 bg-blue-400 z-0 transition duration-75 hidden md:block"
+    [style.left.px]="cursorX - 192" [style.top.px]="cursorY - 192">
+  </div>
+
+</div>

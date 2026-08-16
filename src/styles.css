@@ -1,0 +1,25 @@
+@import "tailwindcss";
+@import 'aos/dist/aos.css';
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #0f172a;
+  /* font-family: 'Poppins', sans-serif; */
+}
+
+html,
+body,
+* {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.hero-title,
+.section-title,
+.logo {
+  font-family: 'Space Grotesk', sans-serif;
+}
